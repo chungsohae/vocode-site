@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>VMcode - Main Page</title>
+  <style>
+    /* 초기화 */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #000; 
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .rotating-text {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      opacity: 0.85;
+      white-space: nowrap;
+      margin-bottom: 2rem;
+    }
+
+   #changing-word {
+  background: linear-gradient(to right, #ef4444, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-shadow: 0 0 4px rgba(245, 94, 0, 0.4), 0 0 10px rgba(255, 80, 0, 0.2);
+  transition: opacity 0.5s ease;
+}
+
+
+    /* 16:9 영상 영역 */
+    .video-section {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding-top: 56.25%;
+      overflow: hidden;
+      background: #111;
+      border-radius: 8px;
+    }
+
+    .video-section video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+    }
+
+    /* 링크 버튼 */
+    .links-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .link-item {
+      font-size: 1rem;
+      text-decoration: none;
+      color: #fff;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      background: transparent;
+      backdrop-filter: blur(0px);
+      transition: all 0.3s ease;
+    }
+
+    .link-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(2px);
+      transform: translateY(-2px);
+    }
+
+    /* 모바일 대응 */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .rotating-text {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+
+      .video-section {
+        max-width: 100%;
+        padding-top: 56.25%;
+        border-radius: 0;
+      }
+
+      .links-container {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .link-item {
+        width: 90%;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>마케팅에 100만원이나 썼다구요?</h1>
+  <h2 class="rotating-text">
+    3만원대로 <span id="changing-word">광고 </span> 상위 노출 최적화를 완성 합니다.
+  </h2>
+
+  <!-- 메인 영상 -->
+  <div class="video-section">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="vmcode1.mp4" type="video/mp4" />
+      브라우저가 video 태그를 지원하지 않습니다.
+    </video>
+  </div>
+
+  <!-- 링크 버튼 -->
+  <div class="links-container">
+    <a href="https://cafe.naver.com/tccfood" target="_blank" class="link-item">네이버 카페</a>
+    <a href="https://instagram.com/vmcode" target="_blank" class="link-item">인스타그램</a>
+    <a href="http://pf.kakao.com/_PxhTPn/friend" target="_blank" class="link-item">카카오톡 채널</a>
+  </div>
+
+  <!-- 키워드 애니메이션 스크립트 -->
+  <script>
+    const words = ["플레이스", "키워드", "SEO", "인스타"];
+    let index = 0;
+    const span = document.getElementById("changing-word");
+
+    setInterval(() => {
+      span.style.opacity = 0;
+      setTimeout(() => {
+        index = (index + 1) % words.length;
+        span.textContent = words[index];
+        span.style.opacity = 1;
+      }, 250);
+    }, 2000);
+  </script>
+
+</body>
+</html>
