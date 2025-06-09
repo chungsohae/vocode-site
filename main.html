@@ -9,13 +9,14 @@
   section { width:100%; scroll-snap-align:start; text-align:center; padding:2rem 1rem; }
 
   /* 첫번째 페이지 */
-  #intro { background:#000; color:#fff; padding:0; height:100vh; position:relative; }
-  #intro .video-section { position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; }
-  #intro .video-section video { width:100%; height:100%; object-fit:cover; }
-  #intro h1, #intro h2 { position:relative; z-index:1; margin:0.5rem 0; }
+  #intro { background:#000; color:#fff; padding:1rem 1rem; }
+  #intro h1 { font-size:2rem; margin-bottom:0.5rem; }
+  #intro h2 { font-size:1.2rem; margin-bottom:1rem; }
+  .video-section { width:100%; height:100vh; overflow:hidden; }
+  .video-section video { width:100%; height:100%; object-fit:cover; }
 
   /* 두번째 페이지 */
-  #page2 { background:#fff; color:#222; text-align:center; line-height:1.6; min-height:130vh; }
+  #page2 { background:#fff; color:#222; text-align:center; line-height:1.6; min-height:90vh; }
   #page2 h2 { font-size:1.8rem; margin-bottom:1rem; }
   .content-section { margin:1rem auto; }
 
@@ -27,29 +28,28 @@
   .review-card img { width:100%; height:100%; object-fit:cover; }
 
   /* 링크 버튼 */
-  .links-container { display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
-  .link-item { text-decoration:none; color:#fff; border:1px solid #fff; padding:0.5rem 1rem; border-radius:4px; transition:0.3s; flex:1 1 22%; text-align:center; }
+  .links-container { display:flex; justify-content:center; gap:0.5rem; margin-top:1rem; flex-wrap:nowrap; }
+  .link-item { text-decoration:none; color:#fff; border:1px solid #fff; padding:0.5rem 1rem; border-radius:4px; transition:0.3s; }
   .link-item:hover { background:rgba(255,255,255,0.1); }
-
-  @media(max-width:768px) {
+  @media(max-width:768px){
     #intro h1 { font-size:1.4rem; }
     #intro h2 { font-size:1rem; }
     #page2 h2 { font-size:1.4rem; }
     .review-card { width:45%; height:150px; }
-    .link-item { flex:1 1 22%; font-size:0.9rem; }
+    .link-item { font-size:0.9rem; }
   }
 </style>
 </head>
 <body>
 
   <section id="intro">
+    <h1>마케팅, 무료로 상위 노출 최적화 시작</h1>
+    <h2>무료로 상위 노출 최적화를 완성합니다.</h2>
     <div class="video-section">
       <video autoplay muted loop playsinline preload="auto">
         <source src="VMCODE1.mp4" type="video/mp4" />
       </video>
     </div>
-    <h1>마케팅, 무료로 상위 노출 최적화 시작</h1>
-    <h2>무료로 상위 노출 최적화를 완성합니다.</h2>
   </section>
 
   <section id="page2">
@@ -72,7 +72,6 @@
   </section>
 
   <div class="links-container">
-    <a href="https://linktr.ee/vmcode" target="_blank" class="link-item">소개 합니다</a>
     <a href="https://cafe.naver.com/tccfood" target="_blank" class="link-item">네이버 카페</a>
     <a href="https://instagram.com/vmcode" target="_blank" class="link-item">인스타그램</a>
     <a href="http://pf.kakao.com/_PxhTPn/friend" target="_blank" class="link-item">카카오톡 채널</a>
